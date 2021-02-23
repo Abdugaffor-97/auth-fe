@@ -14,20 +14,22 @@ const useAuth = () => {
     try {
       const { data } = await backend.get("/users/me");
       setUser(data);
-      setLoading(false);
     } catch (e) {
-      if (
-        e.response.status === 400 ||
-        e.response.status === 401 ||
-        e.response.status === 403
-      ) {
-        history.push("/auth/login");
-        setLoading(false);
-      }
+      console.log(e);
     }
+    setLoading(false);
   }, [setUser, setLoading]);
+  const logout = async () => {
+    try {
+      localStorage.clear();
+      history.push("/auth/login");
+    } catch (e) {
+      console.log(e);
+      setLoading(false);
+    }
+  };
 
-  return [user, loading, fetchUser];
+  return [user, loading, fetchUser, logout];
 };
 
 export default useAuth;

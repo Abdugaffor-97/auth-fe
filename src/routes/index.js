@@ -4,6 +4,7 @@ import SearchResults from "../pages/search/SearchResults";
 import BlankLayout from "../layouts/BlankLayout";
 import Register from "../pages/auth/Register";
 import Login from "../pages/auth/Login";
+import NotFound from "../pages/notfound/NotFound";
 
 const routes = [
   {
@@ -22,13 +23,19 @@ const routes = [
     path: "/auth/login",
     component: Login,
     layout: BlankLayout,
-    isProtected: true,
+    isProtected: false,
   },
   {
     path: "/auth/register",
     component: Register,
     layout: BlankLayout,
-    isProtected: true,
+    isProtected: false,
+  },
+  {
+    path: "/404",
+    component: NotFound,
+    layout: BlankLayout,
+    isProtected: false,
   },
 ];
 

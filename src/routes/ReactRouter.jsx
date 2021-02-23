@@ -29,7 +29,7 @@ const ReactRouter = () => {
             )}
           />
         ))}
-        <Redirect to="/" />
+        <Redirect to="/404" />
       </Switch>
     </Router>
   );

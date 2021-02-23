@@ -1,6 +1,11 @@
 import React from "react";
+import UsersTable from "../../components/UsersTable";
 const Home = ({ user }) => {
-  return <div>{user.email}</div>;
+  return (
+    <div>
+      <UsersTable />
+    </div>
+  );
 };
 
 export default Home;
